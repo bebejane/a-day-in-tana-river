@@ -1,20 +1,20 @@
-import { DatoCmsConfig, getUploadReferenceRoutes } from 'next-dato-utils/config';
+import { DatoCmsConfig } from 'next-dato-utils/config';
 import { MetadataRoute } from 'next';
 
 export default {
 	routes: {
-		start: async (record, locale) => [`/`],
-		upload: async ({ id }) => await getUploadReferenceRoutes(id),
+		a_day_in_tana_river: async () => [`/`],
+		upload: async ({ id }) => ['/'],
 	},
 	sitemap: async () => {
 		return [
 			{
 				url: `${process.env.NEXT_PUBLIC_SITE_URL}/`,
 				lastModified: new Date().toISOString(),
-				changeFrequency: 'daily',
+				changeFrequency: 'weekly',
 				priority: 1,
 			},
-		];
+		] as MetadataRoute.Sitemap;
 	},
 	manifest: async () => {
 		return {

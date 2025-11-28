@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 
 export async function POST(req: Request) {
 	const cookiStore = await cookies();
+
 	if (cookiStore.get('user')?.value === 'authorized') {
 		return new Response('authorized', { status: 200 });
 	}

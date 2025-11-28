@@ -8,12 +8,12 @@ export default function Player() {
 
 	async function fadeIn() {
 		if (!ref.current) return;
-		if (ref.current.volume == 1) return;
+		if (ref.current.volume > 0) return;
 
 		ref.current.muted = false;
 
-		for (let i = 0; i < 100; i++) {
-			ref.current.volume = i / 100;
+		for (let i = 0; i < 1000; i++) {
+			ref.current.volume = i / 1000;
 			console.log(ref.current.volume);
 			await new Promise((resolve) => setTimeout(resolve, 10));
 		}
@@ -33,7 +33,7 @@ export default function Player() {
 	}, []);
 
 	return (
-		<div id='player' onClick={handleClick}>
+		<div id='player' onClick={handleClick} className={s.player}>
 			<MuxPlayer
 				autoPlay='muted'
 				nohotkeys
