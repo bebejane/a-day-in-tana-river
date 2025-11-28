@@ -19,7 +19,7 @@ export default function Player() {
 				streamType='on-demand'
 				className={s.player}
 				ref={ref}
-				style={{ 'height': '100%', 'width': '100%', '--controls': 'none' }}
+				style={{ 'height': '100vh', 'width': '100%', '--controls': 'none' }}
 				playbackId='yccw1QoQ02GCPdq01Jr02vYYHTlYKtjEqbFQT4vfShM2v00'
 				metadata={{
 					video_id: 'video-id-123456',
