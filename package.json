@@ -1,0 +1,48 @@
+{
+	"name": "a-day-in-tana-river",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbo & npm run codegen",
+		"start": "next start",
+		"preview": "npm run build && npm run start",
+		"build": "next build",
+		"dev:email": "PORT=4000 email dev",
+		"codegen": "graphql-codegen --watch",
+		"codegen:datocms": "datocms schema:generate ./types/datocms-cma.ts",
+		"lint": "next lint",
+		"reset": "rm -rf ./node_modules && rm -rf pnpm-lock.yaml && rm -rf .next && pnpm i",
+		"reset:cache": "rm -rf .next/cache"
+	},
+	"dependencies": {
+		"@auth/core": "^0.34.3",
+		"@datocms/cma-client": "^5.1.29",
+		"@datocms/cma-client-browser": "^5.1.29",
+		"@datocms/cma-client-node": "^5.1.29",
+		"@graphql-typed-document-node/core": "^3.2.0",
+		"classnames": "^2.5.1",
+		"dotenv": "^17.2.3",
+		"graphql": "^16.12.0",
+		"next": "15.5.6",
+		"next-dato-utils": "github:bebejane/next-dato-utils#latest",
+		"react": "19.2.0",
+		"react-datocms": "8.0.0-1",
+		"react-dom": "19.2.0",
+		"sass": "1.93.2",
+		"zustand": "^5.0.8"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "^6.1.0",
+		"@graphql-codegen/typed-document-node": "^6.0.2",
+		"@graphql-codegen/typescript": "^5.0.5",
+		"@graphql-codegen/typescript-document-nodes": "^5.0.2",
+		"@graphql-codegen/typescript-graphql-files-modules": "^3.0.1",
+		"@graphql-codegen/typescript-operations": "^5.0.2",
+		"@parcel/watcher": "^2.5.1",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"graphql-config": "^5.1.5",
+		"typescript": "^5"
+	}
+}
