@@ -13,9 +13,38 @@ export type LoginProps = {
 export default function Login({ intro }: LoginProps) {
 	const [password, setPassword] = useState('');
 	const [isOpen, setIsOpen] = useState(true);
-	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState<string | null>(null);
+
+	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
-		setIsOpen(false);
+
+		setLoading(true);
+		setError(null);
+
+		try {
+			const res = await fetch('/api/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					password,
+				}),
+			});
+
+			if (res.status === 200) {
+				setIsOpen(false);
+				document.getElementById('player')?.click();
+			} else if (res.status === 401) {
+				setError('Invalid password');
+			} else setError('Something went wrong');
+		} catch (e) {
+			setError('Something went wrong');
+			return;
+		} finally {
+			setLoading(false);
+		}
 	}
 
 	return (
@@ -32,6 +61,7 @@ export default function Login({ intro }: LoginProps) {
 					/>
 					<button type='submit'>Enter</button>
 				</form>
+				{error && <p className={s.error}>{error}</p>}
 			</div>
 		</div>
 	);

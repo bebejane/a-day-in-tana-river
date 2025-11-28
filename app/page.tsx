@@ -3,18 +3,20 @@ import About from '@/components/About';
 import Login from '@/components/Login';
 import Player from '@/components/Player';
 import { StartDocument } from '@/graphql';
-import MuxPlayer from '@mux/mux-player-react';
 import { apiQuery } from 'next-dato-utils/api';
+import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 export default async function Home() {
+	const cookiStore = await cookies();
+	const authorized = cookiStore.get('user')?.value === 'authorized';
 	const { aDayInTanaRiver } = await apiQuery(StartDocument);
 	if (!aDayInTanaRiver) return notFound();
 
 	return (
 		<>
 			<Player />
-			<Login intro={aDayInTanaRiver.intro} />
+			{!authorized && <Login intro={aDayInTanaRiver.intro} />}
 			<About text={aDayInTanaRiver.text} />
 		</>
 	);
