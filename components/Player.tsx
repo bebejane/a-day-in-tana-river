@@ -5,10 +5,15 @@ import MuxPlayer from '@mux/mux-player-react';
 
 export default function Player() {
 	const ref = useRef<HTMLVideoElement | null>(null);
+	const playCount = useRef<number>(0);
 
 	async function fadeIn() {
 		if (!ref.current) return;
 		if (ref.current.volume > 0) return;
+
+		playCount.current += 1;
+
+		if (playCount.current === 1) return;
 
 		ref.current.muted = false;
 
@@ -28,8 +33,8 @@ export default function Player() {
 	useEffect(() => {
 		if (!ref.current) return;
 		const player = ref.current;
-		//player.addEventListener('play', fadeIn);
-		//return () => player.removeEventListener('play', fadeIn);
+		player.addEventListener('play', fadeIn);
+		return () => player.removeEventListener('play', fadeIn);
 	}, []);
 
 	return (
