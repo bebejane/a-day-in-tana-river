@@ -1,6 +1,9 @@
+import s from './page.module.scss';
 import About from '@/components/About';
 import Login from '@/components/Login';
+import Player from '@/components/Player';
 import { StartDocument } from '@/graphql';
+import MuxPlayer from '@mux/mux-player-react';
 import { apiQuery } from 'next-dato-utils/api';
 import { notFound } from 'next/navigation';
 
@@ -9,9 +12,10 @@ export default async function Home() {
 	if (!aDayInTanaRiver) return notFound();
 
 	return (
-		<article>
+		<>
+			<Player />
 			<Login intro={aDayInTanaRiver.intro} />
 			<About text={aDayInTanaRiver.text} />
-		</article>
+		</>
 	);
 }

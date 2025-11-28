@@ -1,7 +1,9 @@
 'use client';
 
-import Content from '@/components/Content';
 import s from './Login.module.scss';
+import cn from 'classnames';
+import Content from '@/components/Content';
+
 import { useState } from 'react';
 
 export type LoginProps = {
@@ -10,12 +12,14 @@ export type LoginProps = {
 
 export default function Login({ intro }: LoginProps) {
 	const [password, setPassword] = useState('');
+	const [isOpen, setIsOpen] = useState(true);
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
+		setIsOpen(false);
 	}
 
 	return (
-		<div className={s.login}>
+		<div className={cn(s.login, !isOpen && s.closed)}>
 			<h1>A day in Tana River</h1>
 			<div className={s.wrap}>
 				<Content content={intro} className={s.intro} />

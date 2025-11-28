@@ -1,6 +1,7 @@
 'use client';
 
 import s from './About.module.scss';
+import cn from 'classnames';
 import Content from '@/components/Content';
 import { useState } from 'react';
 
@@ -20,7 +21,7 @@ export default function About({ text }: AboutProps) {
 			<button className={s.button} onClick={handleClick}>
 				{isOpen ? 'Close' : 'About'}
 			</button>
-			<div className={s.about}>
+			<div className={cn(s.about, isOpen && s.open)}>
 				<div className={`${s.modal} ${isOpen ? s.open : ''}`}>
 					<h2>A Day in Tana River</h2>
 					<Content content={text} />

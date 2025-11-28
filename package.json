@@ -20,6 +20,7 @@
 		"@datocms/cma-client-browser": "^5.1.29",
 		"@datocms/cma-client-node": "^5.1.29",
 		"@graphql-typed-document-node/core": "^3.2.0",
+		"@mux/mux-player-react": "^3.9.1",
 		"classnames": "^2.5.1",
 		"dotenv": "^17.2.3",
 		"graphql": "^16.12.0",
