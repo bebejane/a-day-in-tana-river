@@ -19,7 +19,6 @@ export default function Player() {
 
 		for (let i = 0; i < 1000; i++) {
 			ref.current.volume = i / 1000;
-			console.log(ref.current.volume);
 			await new Promise((resolve) => setTimeout(resolve, 10));
 		}
 		ref.current.volume = 1;
