@@ -1,0 +1,36 @@
+.about {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: var(--z-about);
+	//backdrop-filter: blur(5px);
+
+	.modal {
+		display: none;
+		flex-direction: column;
+		width: 50vw;
+		height: 100%;
+		background-color: var(--white);
+		padding: 10rem;
+
+		&.open {
+			display: flex;
+		}
+	}
+}
+
+.button {
+	all: unset;
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: var(--outer-margin);
+	text-align: center;
+	z-index: var(--z-about);
+}

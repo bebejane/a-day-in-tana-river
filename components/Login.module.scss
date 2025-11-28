@@ -1,0 +1,43 @@
+.login {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(5px);
+	z-index: var(--z-login);
+
+	.wrap {
+		background-color: var(--white);
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+
+		.intro {
+			color: var(--black);
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 50vw;
+
+			padding: 10rem;
+
+			input {
+				text-align: center;
+			}
+
+			button {
+				all: unset;
+				background-color: transparent;
+				color: var(--black);
+				text-align: center;
+			}
+		}
+	}
+}

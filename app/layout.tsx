@@ -18,15 +18,13 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
 }
 
 export async function generateMetadata({ params }: LayoutProps<'/'>): Promise<Metadata> {
-	const { locale } = await params;
 	const {
 		site: { globalSeo, faviconMetaTags },
 	} = await apiQuery(GlobalDocument, {
-		variables: { locale: locale as SiteLocale },
 		revalidate: 60 * 60,
 	});
 
-	const siteName = globalSeo?.siteName ?? '';
+	const siteName = 'A day in Tana River';
 
 	return {
 		metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL as string),
@@ -41,10 +39,10 @@ export async function generateMetadata({ params }: LayoutProps<'/'>): Promise<Me
 				template: `${siteName} — %s`,
 				default: siteName ?? '',
 			},
-			description: globalSeo?.fallbackSeo?.description?.substring(0, 157),
+			description: '',
 			pathname: '/',
 			image: globalSeo?.fallbackSeo?.image as FileField,
-			locale: locale as SiteLocale,
+			locale: 'en' as SiteLocale,
 		})),
 	};
 }
@@ -99,7 +97,7 @@ export async function buildMetadata({
 						},
 					]
 				: undefined,
-			locale: locale === 'sv' ? 'sv_SE' : 'en_US',
+			locale: 'en_US',
 			type: 'website',
 		},
 	};

@@ -1,0 +1,17 @@
+query Start {
+	aDayInTanaRiver {
+		id
+		intro {
+			blocks
+			links
+			value
+		}
+		text {
+			blocks
+			inlineBlocks
+			links
+			value
+		}
+		url
+	}
+}
