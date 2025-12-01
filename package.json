@@ -15,7 +15,6 @@
 		"reset:cache": "rm -rf .next/cache"
 	},
 	"dependencies": {
-		"@auth/core": "^0.34.3",
 		"@datocms/cma-client": "^5.1.29",
 		"@datocms/cma-client-browser": "^5.1.29",
 		"@datocms/cma-client-node": "^5.1.29",

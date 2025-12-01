@@ -1,5 +1,12 @@
 .player {
-	mux-player {
-		--controls: none;
+	opacity: 0;
+	animation: fade 8000ms ease-out forwards;
+	@keyframes fade {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 }
