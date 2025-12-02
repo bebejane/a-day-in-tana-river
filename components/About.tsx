@@ -23,7 +23,6 @@ export default function About({ text }: AboutProps) {
 			</button>
 			<div className={cn(s.about, isOpen && s.open)}>
 				<div className={`${s.modal} ${isOpen ? s.open : ''}`}>
-					<h2>A Day in Tana River</h2>
 					<Content content={text} />
 				</div>
 			</div>
