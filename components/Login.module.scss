@@ -6,10 +6,22 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	backdrop-filter: blur(20px);
 	z-index: var(--z-login);
+
+	header {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	h1 {
+		margin: 0;
+		//height: 100%;
+	}
 
 	&.closed {
 		display: none;
@@ -18,8 +30,9 @@
 		background-color: var(--white);
 		display: flex;
 		flex-direction: column;
-
 		align-items: center;
+		max-width: 50vw;
+		padding: 3rem;
 
 		.intro {
 			color: var(--black);
@@ -27,19 +40,30 @@
 		form {
 			display: flex;
 			flex-direction: column;
-			width: 50vw;
+			width: 100%;
 
-			padding: 10rem;
+			padding: 2rem;
+			padding-bottom: 1rem;
 
 			input {
 				text-align: center;
+				padding: 0.75rem;
+				margin-bottom: 1rem;
+				border-radius: 0;
+				border: 1px solid;
 			}
 
 			button {
+				cursor: pointer;
 				all: unset;
 				background-color: transparent;
 				color: var(--black);
 				text-align: center;
+				padding: 1rem;
+				&:hover {
+					background-color: var(--black);
+					color: var(--white);
+				}
 			}
 		}
 	}

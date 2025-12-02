@@ -25,3 +25,17 @@
 	font-weight: bold;
 	font-style: italic;
 }
+
+@font-face {
+	font-family: "Times";
+	src: url("../public/fonts/OceanicText-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Times";
+	src: url("../public/fonts/OceanicText-RegularItalic.woff2") format("woff2");
+	font-weight: normal;
+	font-style: italic;
+}

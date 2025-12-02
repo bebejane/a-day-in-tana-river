@@ -37,7 +37,7 @@ export default function Login({ intro }: LoginProps) {
 				setIsOpen(false);
 				document.getElementById('player')?.click();
 			} else if (res.status === 401) {
-				setError('Invalid password');
+				setError('Invalid password, please try again.');
 			} else setError('Something went wrong');
 		} catch (e) {
 			setError('Something went wrong');
@@ -49,7 +49,9 @@ export default function Login({ intro }: LoginProps) {
 
 	return (
 		<div className={cn(s.login, !isOpen && s.closed)}>
-			<h1>A day in Tana River</h1>
+			<header>
+				<h1>A Day in Tana River</h1>
+			</header>
 			<div className={s.wrap}>
 				<Content content={intro} className={s.intro} />
 				<form onSubmit={handleSubmit}>
@@ -63,6 +65,10 @@ export default function Login({ intro }: LoginProps) {
 				</form>
 				{error && <p className={s.error}>{error}</p>}
 			</div>
+			<header>
+				<h1></h1>
+			</header>
+
 		</div>
 	);
 }
