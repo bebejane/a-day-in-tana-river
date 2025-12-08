@@ -20,7 +20,7 @@
 	.modal {
 		display: none;
 		flex-direction: column;
-		height: 100%;
+		height: auto;
 		width: calc(100% - 4rem);
 		background-color: var(--white);
 		color: var(--black);

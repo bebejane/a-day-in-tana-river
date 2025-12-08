@@ -50,7 +50,7 @@ export default function Login({ intro }: LoginProps) {
 	return (
 		<div className={cn(s.login, !isOpen && s.closed)}>
 			<header>
-				<h1></h1>
+				<h1>A Day in Tana River</h1>
 			</header>
 			<div className={s.wrap}>
 				<Content content={intro} className={s.intro} />
@@ -66,7 +66,7 @@ export default function Login({ intro }: LoginProps) {
 				{error && <p className={s.error}>{error}</p>}
 			</div>
 			<header>
-				<h1></h1>
+				<h1>a film by Senay Berhe</h1>
 			</header>
 
 		</div >
