@@ -1,6 +1,6 @@
 .player {
 	opacity: 0;
-	//animation: fade 8000ms ease-out forwards;
+	animation: fade 500ms ease-out forwards;
 	@keyframes fade {
 		from {
 			opacity: 0;
