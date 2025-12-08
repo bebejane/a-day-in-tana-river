@@ -9,7 +9,9 @@
 	justify-content: center;
 	align-items: center;
 	z-index: var(--z-about);
-	margin: 2rem;
+	@include mq($from: desktop) {
+		margin: 2rem;
+	}
 
 	&.open {
 		display: flex;
@@ -18,11 +20,17 @@
 	.modal {
 		display: none;
 		flex-direction: column;
-		width: 50vw;
 		height: 100%;
+		width: calc(100% - 4rem);
 		background-color: var(--white);
 		color: var(--black);
-		padding: 10rem;
+		padding: 2rem;
+		overflow: auto;
+
+		@include mq($from: desktop) {
+			width: 50vw;
+			padding: 4rem;
+		}
 
 		&.open {
 			display: flex;
@@ -39,4 +47,21 @@
 	text-align: center;
 	cursor: pointer;
 	z-index: calc(var(--z-about) + 1);
+	transition: opacity 0.3s ease-in-out;
+}
+
+.aboutButton {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease-in-out;
+
+	&.visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.closeButton {
+	opacity: 1;
+	pointer-events: auto;
 }

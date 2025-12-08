@@ -45,6 +45,7 @@
 
 		p {
 			text-align: center;
+			margin: 0;
 		}
 		form {
 			display: flex;
@@ -55,7 +56,7 @@
 
 			@include mq($from: desktop) {
 				padding: 2rem;
-				padding-bottom: 1rem;
+				padding-bottom: 0.5rem;
 			}
 
 			input {
@@ -68,15 +69,17 @@
 			}
 
 			button {
-				cursor: pointer;
 				all: unset;
 				background-color: transparent;
 				color: var(--black);
 				text-align: center;
 				padding: 1rem;
+				padding-bottom: 1rem;
+				font-family: "Times";
 				&:hover {
 					background-color: var(--black);
 					color: var(--white);
+					cursor: pointer;
 				}
 			}
 		}

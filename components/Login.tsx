@@ -50,7 +50,7 @@ export default function Login({ intro }: LoginProps) {
 	return (
 		<div className={cn(s.login, !isOpen && s.closed)}>
 			<header>
-				<h1>A Day in Tana River</h1>
+				<h1></h1>
 			</header>
 			<div className={s.wrap}>
 				<Content content={intro} className={s.intro} />
@@ -69,6 +69,6 @@ export default function Login({ intro }: LoginProps) {
 				<h1></h1>
 			</header>
 
-		</div>
+		</div >
 	);
 }
