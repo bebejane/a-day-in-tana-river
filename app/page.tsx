@@ -4,19 +4,16 @@ import Login from '@/components/Login';
 import Player from '@/components/Player';
 import { StartDocument } from '@/graphql';
 import { apiQuery } from 'next-dato-utils/api';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 export default async function Home() {
-	const cookiStore = await cookies();
-	const authorized = cookiStore.get('user')?.value === 'authorized';
 	const { aDayInTanaRiver } = await apiQuery(StartDocument);
 	if (!aDayInTanaRiver) return notFound();
 
 	return (
 		<>
 			<Player />
-			{!authorized && <Login intro={aDayInTanaRiver.intro} />}
+			<Login intro={aDayInTanaRiver.intro} />
 			<About text={aDayInTanaRiver.text} />
 		</>
 	);
