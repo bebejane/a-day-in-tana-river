@@ -46,6 +46,11 @@
 		p {
 			text-align: center;
 			margin: 0;
+			@include mq($from: desktop) {
+				max-width: 50ch;
+				margin-right: 4rem;
+				margin-left: 4rem;
+			}
 		}
 		form {
 			display: flex;
