@@ -80,23 +80,20 @@ export default function About({ text }: AboutProps) {
 	return (
 		<>
 			{!isOpen && (
-				<button 
-					className={cn(s.button, s.aboutButton, showAboutButton && s.visible)} 
+				<button
+					className={cn(s.button, s.aboutButton, showAboutButton && s.visible)}
 					onClick={handleAboutClick}
 				>
 					About
 				</button>
 			)}
 			{isOpen && (
-				<button 
-					className={cn(s.button, s.closeButton)} 
-					onClick={handleCloseClick}
-				>
+				<button className={cn(s.button, s.closeButton)} onClick={handleCloseClick}>
 					Close
 				</button>
 			)}
 			<div className={cn(s.about, isOpen && s.open)}>
-				<div className={`${s.modal} ${isOpen ? s.open : ''}`}>
+				<div className={`${s.modal} ${isOpen ? s.open : ''}`} onClick={() => setIsOpen(false)}>
 					<Content content={text} />
 				</div>
 			</div>
