@@ -27,6 +27,10 @@
 		padding: 2rem;
 		overflow: auto;
 
+		@include mq($until: desktop) {
+			margin-top: 5rem;
+		}
+
 		p {
 			margin-bottom: 0.75em;
 			//text-indent: 2em;
