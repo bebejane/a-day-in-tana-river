@@ -68,7 +68,6 @@ export default function Login({ intro }: LoginProps) {
 			<header>
 				<h1>a film by Senay Berhe</h1>
 			</header>
-
-		</div >
+		</div>
 	);
 }
