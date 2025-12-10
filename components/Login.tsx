@@ -56,7 +56,7 @@ export default function Login({ intro }: LoginProps) {
 				<Content content={intro} className={s.intro} />
 				<form onSubmit={handleSubmit}>
 					<input
-						type='password'
+						type='text'
 						value={password}
 						placeholder='Please enter your password'
 						onChange={(e) => setPassword(e.target.value)}
