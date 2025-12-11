@@ -2,6 +2,8 @@
 	opacity: 0;
 	animation: fade 500ms ease-out forwards;
 	height: 100dvh;
+	cursor: pointer;
+
 	@keyframes fade {
 		from {
 			opacity: 0;

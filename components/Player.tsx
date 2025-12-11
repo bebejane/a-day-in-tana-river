@@ -11,9 +11,13 @@ export default function Player() {
 	async function fadeIn() {
 		if (!ref.current) return;
 
-		if (!ref.current.muted) return;
-		ref.current.muted = false;
+		if (!ref.current.muted) {
+			ref.current.muted = true;
+			return;
+		}
+
 		ref.current.volume = 0;
+		ref.current.muted = false;
 
 		for (let i = 0; i < 1000 && ref.current.volume < 1; i++) {
 			ref.current.volume = i / 1000;
