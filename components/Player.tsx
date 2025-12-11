@@ -10,8 +10,9 @@ export default function Player() {
 	async function fadeIn() {
 		if (!ref.current) return;
 
-		ref.current.volume = 0;
+		if (!ref.current.muted) return;
 		ref.current.muted = false;
+		ref.current.volume = 0;
 
 		for (let i = 0; i < 1000 && ref.current.volume < 1; i++) {
 			ref.current.volume = i / 1000;
@@ -28,23 +29,15 @@ export default function Player() {
 
 	return (
 		<div id='player' onClick={handleClick} className={s.player}>
-			<MuxPlayer
+			<video
 				autoPlay={true}
-				nohotkeys
 				muted
 				loop
-				volume={1.0}
-				streamType='on-demand'
 				className={s.player}
-				//@ts-ignore
 				ref={ref}
-				style={{ 'height': '100dvh', 'width': '100%', '--controls': 'none' }}
-				playbackId='yccw1QoQ02GCPdq01Jr02vYYHTlYKtjEqbFQT4vfShM2v00'
-				metadata={{
-					video_id: 'video-id-123456',
-					video_title: 'A Day in Tana River',
-					viewer_user_id: 'user-id',
-				}}
+				playsInline={true}
+				style={{ height: '100dvh', width: '100%' }}
+				src='https://stream.mux.com/yccw1QoQ02GCPdq01Jr02vYYHTlYKtjEqbFQT4vfShM2v00.m3u8'
 			/>
 		</div>
 	);
