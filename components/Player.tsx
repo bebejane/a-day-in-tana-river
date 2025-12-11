@@ -30,13 +30,13 @@ export default function Player() {
 	return (
 		<div id='player' onClick={handleClick} className={s.player}>
 			<video
-				autoPlay={true}
+				autoPlay={false}
 				muted
 				loop
 				className={s.player}
 				ref={ref}
 				controls={true}
-				playsInline={true}
+				playsInline={false}
 				style={{ height: '100dvh', width: '100%' }}
 				src='https://stream.mux.com/yccw1QoQ02GCPdq01Jr02vYYHTlYKtjEqbFQT4vfShM2v00.m3u8'
 			/>
