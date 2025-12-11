@@ -49,7 +49,7 @@ export default function Player() {
 				className={s.player}
 				//@ts-ignore
 				ref={ref}
-				style={{ 'height': '100vh', 'width': '100%', '--controls': 'none' }}
+				style={{ 'height': '100dvh', 'width': '100%', '--controls': 'none' }}
 				playbackId='yccw1QoQ02GCPdq01Jr02vYYHTlYKtjEqbFQT4vfShM2v00'
 				metadata={{
 					video_id: 'video-id-123456',
