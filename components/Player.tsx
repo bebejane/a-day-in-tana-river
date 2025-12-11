@@ -33,7 +33,7 @@ export default function Player() {
 				nohotkeys
 				muted
 				loop
-				volume={0.0}
+				volume={1.0}
 				streamType='on-demand'
 				className={s.player}
 				//@ts-ignore
