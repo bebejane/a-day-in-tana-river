@@ -36,7 +36,7 @@ export default function Player() {
 				className={s.player}
 				ref={ref}
 				controls={true}
-				playsInline={false}
+				playsInline={true}
 				style={{ height: '100dvh', width: '100%' }}
 				src='https://stream.mux.com/yccw1QoQ02GCPdq01Jr02vYYHTlYKtjEqbFQT4vfShM2v00.m3u8'
 			/>
