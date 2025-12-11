@@ -29,7 +29,7 @@ export default function Player() {
 	return (
 		<div id='player' onClick={handleClick} className={s.player}>
 			<MuxPlayer
-				autoPlay='muted'
+				autoPlay={true}
 				nohotkeys
 				muted
 				loop
