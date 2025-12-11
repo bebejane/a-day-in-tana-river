@@ -61,7 +61,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	margin: var(--outer-margin);
+	padding: var(--outer-margin);
 	text-align: center;
 	cursor: pointer;
 	z-index: calc(var(--z-about) + 1);
