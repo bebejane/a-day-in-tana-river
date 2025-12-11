@@ -10,14 +10,10 @@ export default function Player() {
 	async function fadeIn() {
 		if (!ref.current) return;
 
-		playCount.current += 1;
-
-		if (playCount.current === 1 || playCount.current > 2) return;
-
 		ref.current.volume = 0;
 		ref.current.muted = false;
 
-		for (let i = 0; i < 1000; i++) {
+		for (let i = 0; i < 1000 && ref.current.volume < 1; i++) {
 			ref.current.volume = i / 1000;
 			await new Promise((resolve) => setTimeout(resolve, 10));
 		}
@@ -29,13 +25,6 @@ export default function Player() {
 		if (!ref.current) return;
 		fadeIn();
 	}
-
-	useEffect(() => {
-		if (!ref.current) return;
-		const player = ref.current;
-		player.addEventListener('play', fadeIn);
-		return () => player.removeEventListener('play', fadeIn);
-	}, []);
 
 	return (
 		<div id='player' onClick={handleClick} className={s.player}>
